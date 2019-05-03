@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "test": "jest"
+    "build": "webpack",
+    "build:prod": "webpack && lint && test",
+    "test": "jest",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   },
   "homepage": "https://github.com/pcaldredbann/ee_fizzbuzz#readme",
   "devDependencies": {
+    "eslint": "^5.16.0",
     "jest": "^23.6.0",
     "webpack": "^4.28.2",
     "webpack-cli": "^3.1.2"
