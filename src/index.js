@@ -1,6 +1,6 @@
 "use strict";
 
-const { join } = require('lodash');
+const { join, indexOf } = require('lodash');
 
 const runFizzBuzzer = function (start, end) {
   if (!(!!start)) throw 'Start value is not valid.';
@@ -11,7 +11,10 @@ const runFizzBuzzer = function (start, end) {
 
   const result = [];
   for (let cursor = start; cursor <= end; cursor++) {
-    if (cursor % 15 === 0) {
+    if (indexOf(cursor.toString(), '3') > -1) {
+      result.push('lucky');
+    }
+    else if (cursor % 15 === 0) {
       result.push('fizzbuzz');
     }
     else if (cursor % 3 === 0) {
